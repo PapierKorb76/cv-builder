@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from "./components/Form";
+import Navbar from "./components/Navbar";
+import { useEffect } from "react";
+import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
+  const style = document.body.style;
+  useEffect(() => {
+    style.margin = "0px";
+    style.width = "100%";
+    style.height = "100vh";
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div>
+        <Form />
+      </div>
+      <Footer />
     </div>
   );
 }
-
-export default App;
